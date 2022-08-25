@@ -1,6 +1,5 @@
 import notFound from '../../icons/square_вектор-08.jpg';
 import { NotFoundBlock } from './NotFoundView.styled';
-import { Link } from 'react-router-dom';
 
 const NotFoundView = () => {
   return (

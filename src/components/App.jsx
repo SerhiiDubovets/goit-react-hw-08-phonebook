@@ -27,6 +27,11 @@ const SignUp = lazy(() =>
 const SignInSide = lazy(() =>
   import('views/LoginView/LoginView' /* webpackChunkName: 'LoginView' */)
 );
+const NotFoundView = lazy(() =>
+  import(
+    'views/NotFoundView/NotFoundView' /* webpackChunkName: 'NotFoundView' */
+  )
+);
 
 export default function App() {
   const dispatch = useDispatch();
@@ -43,6 +48,7 @@ export default function App() {
         {!isFetchCurrentUser && (
           <Routes>
             <Route path="/" element={<ResponsiveAppBar />}>
+              <Route path="*" element={<NotFoundView />} />
               <Route index path="/home" element={<HomePage />} />
               <Route
                 path="/login"

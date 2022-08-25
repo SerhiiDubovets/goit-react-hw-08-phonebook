@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
@@ -16,7 +15,6 @@ import { LinkItem, UserTitle } from './UserMenu.styled';
 const UserMenu = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUsername);
-  const settings = ['Profile', 'Account', 'Dashboard'];
 
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -57,11 +55,6 @@ const UserMenu = () => {
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
       >
-        {settings.map(setting => (
-          <MenuItem key={setting} onClick={handleCloseUserMenu}>
-            <Typography textAlign="center">{setting}</Typography>
-          </MenuItem>
-        ))}
         <MenuItem>
           <LinkItem to="/home" onClick={handleLogOut}>
             Log out
